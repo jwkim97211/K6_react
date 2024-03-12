@@ -14,8 +14,8 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: lightcyan;
+  /* min-height: 50vh; 화면 50% */
   display: flex;
   flex-direction: column;
   align-items: center;
