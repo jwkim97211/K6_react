@@ -2,15 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';  //./App.js
-import MyClock from './01_1/MyClock';
+
+
 //import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));  //가상돔을 만듬
 root.render(
-  <React.StrictMode>
-    {/* <App /> */}
-    <MyClock />
-  </React.StrictMode>
+  // <React.StrictMode>
+    <App />
+  // </React.StrictMode>
 );
 
 //<App />=태그(내가 만든 태그=컴포넌트,자바스크립트 함수(대문자로 시작)) 일반태그는 소문자
