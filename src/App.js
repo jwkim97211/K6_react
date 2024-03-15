@@ -1,8 +1,9 @@
+import MyDiv1 from './03/MyDiv1';
 import './App.css';
 // import MainHeader from './01/MainHeader';
 // import Hello from './01/Hello';
 // import MyClock from './01_1/MyClock';
-import HelloC from './02/HelloC';
+// import HelloC from './02/HelloC';
 import { AiOutlineHome } from "react-icons/ai";
 
 function App() {
@@ -17,8 +18,9 @@ function App() {
           <AiOutlineHome className='text-3xl'/>
           </div>
         </header>
-        <main className='grow'>
-          <HelloC />
+        <main className='grow flex flex-col justify-center items-center'>
+          {/* <HelloC /> */}
+          <MyDiv1 />
         </main>
         <footer className='flex justify-center items-center bg-blue-950 h-20 text-white'>
           &copy;2024 KimJeongWon. All rights reserved.

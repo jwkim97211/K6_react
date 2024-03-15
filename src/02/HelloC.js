@@ -2,7 +2,7 @@ import logo from '../logo.svg';
 import './HelloC.css'
 import HelloWhite from './HelloWhite';
 import HelloYellow from './HelloYellow';
-import HelloYoutube from './HelloYoutube';
+
 
 export default function HelloC() {
 
@@ -14,7 +14,6 @@ export default function HelloC() {
             <img className = "imglogo" src={logo} alt="logo" />
             <div className='flex'>
             <HelloWhite />
-            <HelloYoutube />
             <HelloYellow />
             </div>
         </div>
