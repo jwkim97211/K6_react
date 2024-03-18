@@ -1,7 +1,7 @@
 // import MyDiv1 from './03_1/MyDiv1';
 // import MyList from './04/MyList';
 // import MyListMain from './04/MyListMain';
-import BoxOfficeMain from './05/BoxOfficeMain';
+import BoxOffice from './05/BoxOffice';
 import './App.css';
 // import MainHeader from './01/MainHeader';
 // import Hello from './01/Hello';
@@ -18,14 +18,14 @@ function App() {
             react 실습
           </div>
           <div>
-          <AiOutlineHome className='text-3xl'/>
+            <AiOutlineHome className='text-3xl' />
           </div>
         </header>
         <main className='grow flex flex-col justify-center items-center'>
           {/* <HelloC /> */}
           {/* <MyDiv1 /> */}
           {/* <MyListMain /> */}
-          <BoxOfficeMain />
+          <BoxOffice />
         </main>
         <footer className='flex justify-center items-center bg-blue-950 h-20 text-white'>
           &copy;2024 KimJeongWon. All rights reserved.
