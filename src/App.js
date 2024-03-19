@@ -1,7 +1,8 @@
 // import MyDiv1 from './03_1/MyDiv1';
 // import MyList from './04/MyList';
 // import MyListMain from './04/MyListMain';
-import BoxOffice from './05/BoxOffice';
+// import BoxOffice from './05/BoxOffice';
+import Lotto from './06/Lotto';
 import './App.css';
 // import MainHeader from './01/MainHeader';
 // import Hello from './01/Hello';
@@ -25,7 +26,8 @@ function App() {
           {/* <HelloC /> */}
           {/* <MyDiv1 /> */}
           {/* <MyListMain /> */}
-          <BoxOffice />
+          {/* <BoxOffice /> */}
+          <Lotto />
         </main>
         <footer className='flex justify-center items-center bg-blue-950 h-20 text-white'>
           &copy;2024 KimJeongWon. All rights reserved.
