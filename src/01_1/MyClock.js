@@ -1,12 +1,13 @@
-import MyClockImage from "./MyClockImage"
-import MyClockTime from "./MyClockTime"
+import MyClockImage from "./MyClockImage";
+import MyClockTime from "./MyClockTime";
 
 function MyClock() {
-    return (
-        <div style={{ backgroundColor: "black", width: "60%" ,height:"50vh"}}>
-            <MyClockImage />
-            <MyClockTime />
-        </div>
-    )
+  return (
+    <div className="mainArea">
+      <MyClockImage />
+      <MyClockTime />
+    </div>
+  )
 }
-export default MyClock
+
+export default MyClock ;
