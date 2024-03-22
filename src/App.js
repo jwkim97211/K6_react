@@ -6,7 +6,8 @@
 // import FoodCard from './07/FoodMain';
 // import MainHeader from './01/MainHeader';
 // import Hello from './01/Hello';
-import MyClock from './01_1/MyClock';
+// import MyClock from './01_1/MyClock';
+import TrafficMain from './09/TrafficMain';
 // import HelloC from './02/HelloC';
 // import FoodMain from './07/FoodMain';
 import './App.css';
@@ -32,7 +33,8 @@ function App() {
           {/* <BoxOffice /> */}
           {/* <Lotto /> */}
           {/* <FoodMain /> */}
-          <MyClock />
+          {/* <MyClock /> */}
+          <TrafficMain />
         </main>
         <footer className='flex justify-center items-center bg-blue-950 h-20 text-white'>
           &copy;2024 KimJeongWon. All rights reserved.

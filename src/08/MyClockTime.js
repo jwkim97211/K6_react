@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react"
 
-
 function MyClockTime() {
   const [currenttime, setCurrenttime] = useState(new Date())
   useEffect(() => {
