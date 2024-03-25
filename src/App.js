@@ -7,9 +7,12 @@
 // import MainHeader from './01/MainHeader';
 // import Hello from './01/Hello';
 // import MyClock from './01_1/MyClock';
-import TrafficMain from './09/TrafficMain';
+// import TrafficMain from './09/TrafficMain';
 // import HelloC from './02/HelloC';
 // import FoodMain from './07/FoodMain';
+// import RefVal from './10/RefVal';
+// import RefInput from './10/RefInput';
+import BoxOffice from './05/BoxOffice';
 import './App.css';
 // import MyClock from './08/MyClock'
 import { AiOutlineHome } from "react-icons/ai";
@@ -34,7 +37,10 @@ function App() {
           {/* <Lotto /> */}
           {/* <FoodMain /> */}
           {/* <MyClock /> */}
-          <TrafficMain />
+          {/* <TrafficMain /> */}
+          {/* <RefVal /> */}
+          {/* <RefInput /> */}
+          <BoxOffice />
         </main>
         <footer className='flex justify-center items-center bg-blue-950 h-20 text-white'>
           &copy;2024 KimJeongWon. All rights reserved.

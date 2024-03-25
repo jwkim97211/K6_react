@@ -77,7 +77,7 @@ export default function TrafficMain() {
                 sel={selC2}
                 setSel={setSelC2} />
             }
-            <div className="w-full flex font-bold gird grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">{info}</div>
+            <div className="w-full flex font-bold grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">{info}</div>
         </div>
     )
 }
