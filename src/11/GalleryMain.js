@@ -43,12 +43,6 @@ export default function GalleryMain() {
         setTags(tm)
     }, [tdata])
 
-
-    const handleKeyword = () => {
-
-    }
-
-
     const handleClear = () => {
         keyword.current.value=""
         keyword.current.focus()
@@ -62,8 +56,7 @@ export default function GalleryMain() {
                 <div className="p-2">
                     <TailInput type="text"
                         inputRef={keyword}
-                        ph="키워드 입력"
-                        handleChange={handleKeyword} />
+                        ph="키워드 입력" />
                 </div>
                 <div className="px-3">
                     <TailButton caption="조회"

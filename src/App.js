@@ -13,8 +13,9 @@
 // import RefVal from './10/RefVal';
 // import RefInput from './10/RefInput';
 // import BoxOffice from './05/BoxOffice';
+// import GalleryMain from './11/GalleryMain';
 
-import GalleryMain from './11/GalleryMain';
+import Festival from './12/Festival';
 import './App.css';
 // import MyClock from './08/MyClock'
 import { AiOutlineHome } from "react-icons/ai";
@@ -43,7 +44,8 @@ function App() {
           {/* <RefVal /> */}
           {/* <RefInput /> */}
           {/* <BoxOffice /> */}
-          <GalleryMain />
+          {/* <GalleryMain /> */}
+          <Festival />
         </main>
         <footer className='flex justify-center items-center bg-blue-950 h-20 text-white'>
           &copy;2024 KimJeongWon. All rights reserved.
