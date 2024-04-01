@@ -46,6 +46,7 @@ export default function Frsct() {
     )
 }
 
-// 초단기
+//초단기
 //https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtFcst?serviceKey=EvGbclvzO9v1U1l5eMgKpF3H4YVgRbWX24VTGEPhG66K04BPc73tLUDzWsqfOak4WRpRWEwupZYSiGPcnmAPKw%3D%3D&pageNo=1&numOfRows=1000&dataType=json&base_date=20240401&base_time=0630&nx=55&ny=127
+//단기
 //https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?serviceKey=EvGbclvzO9v1U1l5eMgKpF3H4YVgRbWX24VTGEPhG66K04BPc73tLUDzWsqfOak4WRpRWEwupZYSiGPcnmAPKw%3D%3D&pageNo=1&numOfRows=1000&dataType=json&base_date=20240401&base_time=0500&nx=55&ny=127
