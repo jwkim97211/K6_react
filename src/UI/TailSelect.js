@@ -14,7 +14,7 @@ export default function TailSelect({ handleClick, ops, sRef, opDef }) {
             rounded-lg
             focus:ring-blue-500 focus:border-blue-500 
             block p-2.5">
-            <option defaultValue>{opDef}</option>
+            <option value='' defaultValue>{opDef}</option>
             {opTags}
         </select>
     )

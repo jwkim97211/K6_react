@@ -1,30 +1,67 @@
 import TailSelect from "../UI/TailSelect";
 import TailInput from "../UI/TailInput"
 import TailButton from "../UI/TailButton"
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import xydata from "./getxy.json"
+import { useNavigate } from "react-router-dom";
 
 
 export default function Frsct() {
 
-    const[x,setX] = useState()
-    const[y,setY] = useState()
+    const [x, setX] = useState()
+    const [y, setY] = useState()
+    const [area, setArea] = useState()
+    const [dt, setDt] = useState()
 
     const dRef = useRef()
     const sRef = useRef()
 
+    const navigator = useNavigate()
+
     const handleDate = () => {
-        console.log(dRef.current.value)
+        setDt(dRef.current.value.replaceAll('-', ''))
     }
 
     const handleArea = () => {
-        let tm=xydata.filter(item=>item["1단계"]===sRef.current.value)
+        if (sRef.current.value === '' || sRef.current.value === undefined)
+            return
+        let tm = xydata.filter(item => item["1단계"] === sRef.current.value)
         setX(tm[0]["격자 X"])
         setY(tm[0]["격자 Y"])
-        console.log(x,y)
+        setArea(sRef.current.value)
+        console.log(x, y)
     }
 
+    const handleUltra = () => {
+        if (dt === '' || dt === undefined) {
+            alert("날짜를 선택하세요.")
+            dRef.current.focus()
+            return
+        }
 
+        if (area === '' || area === undefined) {
+            alert("지역를 선택하세요.")
+            sRef.current.focus()
+            return
+        }
+
+        navigator(`/ultra/${dt}/${sRef.current.value}/${x}/${y}`)
+    }
+    const handleVilage = () => {
+        if (dt === '' || dt === undefined) {
+            alert("날짜를 선택하세요.")
+            dRef.current.focus()
+            return
+        }
+
+        if (area === '' || area === undefined) {
+            alert("지역를 선택하세요.")
+            sRef.current.focus()
+            return
+        }
+
+        navigator(`/vilage/${dt}/${sRef.current.value}/${x}/${y}`)
+    }
 
     let ops = xydata.map(item => item["1단계"])
 
@@ -37,16 +74,11 @@ export default function Frsct() {
                 <TailSelect handleClick={handleArea} ops={ops} sRef={sRef} opDef="---지역선택---" />
             </div>
             <div>
-                <TailButton caption="초단기예보" color="blue" />
+                <TailButton caption="초단기예보" color="blue" handleClick={handleUltra} />
             </div>
             <div>
-                <TailButton caption="단기예보" color="blue" />
+                <TailButton caption="단기예보" color="blue" handleClick={handleVilage} />
             </div>
         </div>
     )
 }
-
-//초단기
-//https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtFcst?serviceKey=EvGbclvzO9v1U1l5eMgKpF3H4YVgRbWX24VTGEPhG66K04BPc73tLUDzWsqfOak4WRpRWEwupZYSiGPcnmAPKw%3D%3D&pageNo=1&numOfRows=1000&dataType=json&base_date=20240401&base_time=0630&nx=55&ny=127
-//단기
-//https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?serviceKey=EvGbclvzO9v1U1l5eMgKpF3H4YVgRbWX24VTGEPhG66K04BPc73tLUDzWsqfOak4WRpRWEwupZYSiGPcnmAPKw%3D%3D&pageNo=1&numOfRows=1000&dataType=json&base_date=20240401&base_time=0500&nx=55&ny=127

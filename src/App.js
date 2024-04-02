@@ -6,6 +6,8 @@ import TrafficMain from './09/TrafficMain';
 import GalleryMain from './11/GalleryMain';
 import Festival from './12/Festival';
 import Frsct from './14/Frsct';
+import VilageFcst from './14/VilageFcst';
+import UltraSrtFcst from './14/UltraSrtFcst';
 
 import './App.css';
 import { AiOutlineHome } from "react-icons/ai";
@@ -44,6 +46,8 @@ function App() {
             <Route path='/festival' element={<Festival />} />
             <Route path='/traffic' element={<TrafficMain />} />
             <Route path='/weather' element={<Frsct />} />
+            <Route path='/ultra/:dt/:area/:x/:y' element={<UltraSrtFcst />} />
+            <Route path='/vilage/:dt/:area/:x/:y' element={<VilageFcst />} />
           </Routes>
         </main>
         <footer className='flex justify-center items-center bg-blue-950 h-20 text-white'>
