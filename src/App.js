@@ -8,6 +8,7 @@ import Festival from './12/Festival';
 import Frsct from './14/Frsct';
 import VilageFcst from './14/VilageFcst';
 import UltraSrtFcst from './14/UltraSrtFcst';
+import FrsctList from './14/FrsctList';
 
 import './App.css';
 import { AiOutlineHome } from "react-icons/ai";
@@ -48,6 +49,7 @@ function App() {
             <Route path='/weather' element={<Frsct />} />
             <Route path='/ultra/:dt/:area/:x/:y' element={<UltraSrtFcst />} />
             <Route path='/vilage/:dt/:area/:x/:y' element={<VilageFcst />} />
+            <Route path='/flist' element={<FrsctList />} />
           </Routes>
         </main>
         <footer className='flex justify-center items-center bg-blue-950 h-20 text-white'>

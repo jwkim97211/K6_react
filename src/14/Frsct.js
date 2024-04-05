@@ -32,7 +32,7 @@ export default function Frsct() {
         console.log(x, y)
     }
 
-    const handleUltra = () => {
+    const handleFrsct = (Frsct) => {
         if (dt === '' || dt === undefined) {
             alert("날짜를 선택하세요.")
             dRef.current.focus()
@@ -45,22 +45,11 @@ export default function Frsct() {
             return
         }
 
-        navigator(`/ultra/${dt}/${sRef.current.value}/${x}/${y}`)
-    }
-    const handleVilage = () => {
-        if (dt === '' || dt === undefined) {
-            alert("날짜를 선택하세요.")
-            dRef.current.focus()
-            return
-        }
+        let gubun=''
+        if (Frsct==="ultra") gubun="초단기예보"
+        else gubun="단기예보"
 
-        if (area === '' || area === undefined) {
-            alert("지역를 선택하세요.")
-            sRef.current.focus()
-            return
-        }
-
-        navigator(`/vilage/${dt}/${sRef.current.value}/${x}/${y}`)
+        navigator(`/flist?dt=${dt}&area=${area}&x=${x}&y=${y}&gubun=${gubun}`)
     }
 
     let ops = xydata.map(item => item["1단계"])
@@ -74,10 +63,10 @@ export default function Frsct() {
                 <TailSelect handleClick={handleArea} ops={ops} sRef={sRef} opDef="---지역선택---" />
             </div>
             <div>
-                <TailButton caption="초단기예보" color="blue" handleClick={handleUltra} />
+                <TailButton caption="초단기예보" color="blue" handleClick={()=>{handleFrsct('ultra')}} />
             </div>
             <div>
-                <TailButton caption="단기예보" color="blue" handleClick={handleVilage} />
+                <TailButton caption="단기예보" color="blue" handleClick={()=>{handleFrsct('vilage')}} />
             </div>
         </div>
     )

@@ -1,46 +1,55 @@
 import { useState, useEffect, useRef } from "react"
-import { useParams } from "react-router-dom"
+import { useSearchParams } from "react-router-dom"
 import TailSelect from "../UI/TailSelect"
 import getcode from './getcode.json'
 
-export default function UltraSrtFcst() {
+export default function FrsctList() {
 
-    const dt = useParams().dt
-    const area = useParams().area
-    const x = useParams().x
-    const y = useParams().y
+    const [queryParams] = useSearchParams()
+
+    const dt = queryParams.get('dt')
+    const area = queryParams.get('area')
+    const x = queryParams.get('x')
+    const y = queryParams.get('y')
     const bRef = useRef()
-    const gubun = "초단기예보"
+    const gubun = queryParams.get('gubun')
 
     const ops = getcode.filter(item => item["예보구분"] === gubun).map(item =>
-        `${item["항목명"]}(${item["항목값"]})`
+        `${item["항목명"]}-${item["항목값"]}`
     )
 
-    const [ultradata, setUltraData] = useState([])
+    const [frsctdata, setFrsctData] = useState([])
     const [trtags, setTrtags] = useState([])
     const [selname, setSelName] = useState([])
     const [seleng, setSelEng] = useState([])
 
-
     const getData = async (url) => {
         const resp = await fetch(url)
         const data = await resp.json()
-        setUltraData(data.response.body.items.item)
+        setFrsctData(data.response.body.items.item)
     }
 
     useEffect(() => {
-        let url = "https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtFcst?"
-        url = `${url}serviceKey=${process.env.REACT_APP_APIKEY}`
-        url = `${url}&pageNo=1&numOfRows=1000&dataType=json&base_`
-        url = `${url}date=${dt}&base_time=0630&nx=${x}&ny=${y}`
+        let url = ''
+        if (gubun === "초단기예보") {
+            url = "https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtFcst?"
+            url = `${url}serviceKey=${process.env.REACT_APP_APIKEY}`
+            url = `${url}&pageNo=1&numOfRows=1000&dataType=json&base_`
+            url = `${url}date=${dt}&base_time=0630&nx=${x}&ny=${y}`
+        } else {
+            url = "https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?"
+            url = `${url}serviceKey=${process.env.REACT_APP_APIKEY}`
+            url = `${url}&pageNo=1&numOfRows=1000&dataType=json&base_`
+            url = `${url}date=${dt}&base_time=0500&nx=${x}&ny=${y}`
+        }
 
         console.log(url)
         getData(url)
     }, [])
 
     useEffect(() => {
-        let tm = ultradata.filter(item => item["category"] === seleng).map(item =>
-            <tr key={`${item["fcstTime"]}${item["category"]}`}className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+        let tm = frsctdata.filter(item => item["category"] === seleng).map(item =>
+            <tr key={`${item["fcstTime"]}${item["fcstDate"]}${item["category"]}`} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                 <th scope="row" className="px-6 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                     {selname}
                 </th>
@@ -66,9 +75,8 @@ export default function UltraSrtFcst() {
             setTrtags([])
             return
         }
-
-        setSelName(bRef.current.value.split("(")[0])
-        setSelEng(bRef.current.value.split("(")[1].replace(')', ''))
+            setSelName(bRef.current.value.split("-")[0])
+            setSelEng(bRef.current.value.split("-")[1])
     }
 
     return (
