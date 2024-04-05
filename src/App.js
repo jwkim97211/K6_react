@@ -13,6 +13,7 @@ import FrsctList from './14/FrsctList';
 import './App.css';
 import { AiOutlineHome } from "react-icons/ai";
 import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
+import RecoilMain from './15/RecoilMain';
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
               <Link to='/festival'className='mx-3'>축제</Link>
               <Link to='/traffic'className='mx-3'>교통</Link>
               <Link to='/weather'className='mx-3'>예보</Link>
+              <Link to='/r1'className='mx-3'>리코일</Link>
             </div>
             <Link to='/'><AiOutlineHome className='text-3xl' /></Link>
           </div>
@@ -50,6 +52,7 @@ function App() {
             <Route path='/ultra/:dt/:area/:x/:y' element={<UltraSrtFcst />} />
             <Route path='/vilage/:dt/:area/:x/:y' element={<VilageFcst />} />
             <Route path='/flist' element={<FrsctList />} />
+            <Route path='/r1' element={<RecoilMain />} />
           </Routes>
         </main>
         <footer className='flex justify-center items-center bg-blue-950 h-20 text-white'>
