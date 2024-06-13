@@ -24,7 +24,7 @@ function App() {
     //     </div>
     //   </main>
     // </div>
-    <div className=''>
+    <div className='mx-10'>
     <Main />
     </div>
   );

@@ -44,7 +44,7 @@ export default function Air() {
     }
 
     return (
-        <div className='bg-slate-100 bg-opacity-80 flex flex-col w-1/6 mt-4 ml-3 mb-3 rounded-xl items-center justify-center'>
+        <div className='bg-slate-100 bg-opacity-80 flex flex-col w-1/6 rounded-xl items-center justify-center'>
             <div className='text-black font-bold'>서면역</div>
             <div className='mb-3 mt-2 font-semibold'>
                 <div className='text-black text-center text-sm'><span className='text-orange-700'>초미세먼지(PM2.5)</span><br />1시간 평균</div>

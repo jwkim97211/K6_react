@@ -21,9 +21,9 @@ export default function Time() {
     const formattedTime = time.toLocaleTimeString();
 
   return (
-    <div className='bg-slate-100 bg-opacity-80 w-1/6 h-full rounded-xl mx-3 mt-5 flex flex-col justify-start'>
-       <div className="text-black font-bold mt-3 text-2xl text-center">{formatDate(formattedDate)}</div>
-       <div className="text-black font-bold text-xl text-center">{formattedTime}</div>
+    <div className='bg-slate-100 bg-opacity-80 w-1/6 h-full rounded-xl flex flex-col justify-start'>
+       <div className="text-black font-bold mt-5 text-xl text-center">{formatDate(formattedDate)}</div>
+       <div className="text-black font-bold text-lg text-center">{formattedTime}</div>
     </div>
   )
 }

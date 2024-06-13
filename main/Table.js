@@ -1,27 +1,27 @@
 import React, { useEffect, useState } from 'react';
 
 export default function Table() {
-    const [fac, setFac] = useState();
+    // const [fac, setFac] = useState();
 
-    const getData = async (url) => {
-        const resp = await fetch(url);
-        const data = await resp.json();
-        setFac(data);
-    }
+    // const getData = async (url) => {
+    //     const resp = await fetch(url);
+    //     const data = await resp.json();
+    //     setFac(data);
+    // }
 
-    useEffect(() => {
-        let url = `http://10.125.121.200:8080/getLocation?stationName=서면`;
-        getData(url);
-    }, []);
+    // useEffect(() => {
+    //     let url = `http://10.125.121.200:8080/getLocation?stationName=서면`;
+    //     getData(url);
+    // }, []);
 
-    useEffect(() => {
-        console.log("fac", fac);
-    }, [fac]);
+    // useEffect(() => {
+    //     console.log("fac", fac);
+    // }, [fac]);
 
-    if (!fac) return null;
+    // if (!fac) return null;
 
     return (
-        <div className='bg-slate-100 bg-opacity-80 w-2/3 p-2 rounded-xl mt-4 mb-3 ml-3 mr-3'>
+        <div className='bg-slate-100 bg-opacity-80 w-2/3 p-2 rounded-xl'>
             <table className="w-full text-sm text-gray-600 rounded-xl">
                 <thead className="bg-gray-100 text-xs text-gray-700">
                     <tr>
@@ -32,9 +32,11 @@ export default function Table() {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td className="py-4 px-6">
-                        </td>
+                    <tr className='text-center'>
+                        <td className="py-4 px-6">asd</td>
+                        <td className="py-4 px-6">asd</td>
+                        <td className="py-4 px-6">asd</td>
+                        <td className="py-4 px-6">asd</td>
                     </tr>
                 </tbody>
             </table>
