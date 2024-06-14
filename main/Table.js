@@ -1,45 +1,105 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import center from './center.svg'
+import first from './first.svg'
 
 export default function Table() {
-    // const [fac, setFac] = useState();
 
-    // const getData = async (url) => {
-    //     const resp = await fetch(url);
-    //     const data = await resp.json();
-    //     setFac(data);
-    // }
+    let num1 = [];
+    while (num1.length < 8) {
+        let num = Math.floor(Math.random() * 16);
+        num1.push(num);
+    }
 
-    // useEffect(() => {
-    //     let url = `http://10.125.121.200:8080/getLocation?stationName=서면`;
-    //     getData(url);
-    // }, []);
+    let num2 = [];
+    while (num2.length < 8) {
+        let num = Math.floor(Math.random() * 16);
+        num2.push(num);
+    }
 
-    // useEffect(() => {
-    //     console.log("fac", fac);
-    // }, [fac]);
+    const train1 = num1.map((item, idx) => {
+        let txtColor;
+        let text;
 
-    // if (!fac) return null;
+        if (item >= 0 && item < 5) {
+            txtColor = 'text-red-600';
+            text = '혼잡';
+        } else if (item >= 5 && item < 10) {
+            txtColor = 'text-green-500';
+            text = '보통';
+        } else if (item >= 10) {
+            txtColor = 'text-blue-500';
+            text = '여유';
+        }
+
+
+        if (idx == 7) {
+            return (
+                <div key={idx} className="flex flex-col items-center font-semibold mt-4">
+                    <img src={first} className='w-20' />
+                    <div className='text-sm flex'>
+                        <div className={`${txtColor} text-center`}>{text} {item}</div>
+                    </div>
+                </div>
+            );
+        } else {
+            return (
+                <div key={idx} className="flex flex-col items-center font-semibold mt-4">
+                    <img src={center} className='w-20' />
+                    <div className='text-sm flex'>
+                        <div className={`${txtColor} text-center`}>{text}{item}</div>
+                    </div>
+                </div>
+            );
+        }
+    });
+
+    const train2 = num2.map((item, idx) => {
+        let txtColor;
+        let text;
+
+        if (item >= 0 && item < 5) {
+            txtColor = 'text-red-600';
+            text = '혼잡';
+        } else if (item >= 5 && item < 10) {
+            txtColor = 'text-green-500';
+            text = '보통';
+        } else if (item >= 10) {
+            txtColor = 'text-blue-500';
+            text = '여유';
+        }
+
+
+        if (idx == 7) {
+            return (
+                <div key={idx} className="flex flex-col items-center font-semibold mt-4">
+                    <img src={first} className='w-20' />
+                    <div className='text-sm flex'>
+                        <div className={`${txtColor} w-20 text-center`}>{text} {item}</div>
+                    </div>
+                </div>
+            );
+        } else {
+            return (
+                <div key={idx} className="flex flex-col items-center font-semibold mt-4">
+                    <img src={center} className='w-20' />
+                    <div className='text-sm flex'>
+                        <div className={`${txtColor} w-20 text-center`}>{text} {item}</div>
+                    </div>
+                </div>
+            );
+        }
+    });
 
     return (
-        <div className='bg-slate-100 bg-opacity-80 w-2/3 p-2 rounded-xl'>
-            <table className="w-full text-sm text-gray-600 rounded-xl">
-                <thead className="bg-gray-100 text-xs text-gray-700">
-                    <tr>
-                        <th className="py-2 px-4 text-center">Elevator</th>
-                        <th className="py-2 px-4 text-center">Escalator</th>
-                        <th className="py-2 px-4 text-center">Locker</th>
-                        <th className="py-2 px-4 text-center">Restroom</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr className='text-center'>
-                        <td className="py-4 px-6">asd</td>
-                        <td className="py-4 px-6">asd</td>
-                        <td className="py-4 px-6">asd</td>
-                        <td className="py-4 px-6">asd</td>
-                    </tr>
-                </tbody>
-            </table>
+        <div className='bg-white bg-opacity-80 w-2/3 p-4 rounded-xl'>
+            <div className='flex flex-col justify-start mt-3'>
+                <div className="flex items-center">
+                    {train1}
+                </div>
+                <div className="flex items-center">
+                    {train2}
+                </div>
+            </div>
         </div>
-    )
+    );
 }
